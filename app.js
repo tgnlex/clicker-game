@@ -1,32 +1,16 @@
-import * from '../data/inventory.js'
-import unique from './data/upgrades.js';
+import * from './data/inventory.js';
+import unique from './data/inventory.js'
+import prices from './data/prices.js'
 import rates from './data/rates.js';
+
 import changeInventory  './lib/change_inventory.js';
 import changeMarket from './lib/change_market,js';
 import switchMenu from './lib/switch_menu.js';
+
 function main () {
 $(document).ready(function(){
-    // unique upgrade prices
-    const horse_price;
-    const wagon_price;
-    const train_price;
-
-    // Click Upgrade Prices
-    const axe_upgrade_price = 10;
-    const pickaxe_price = 50; 
-    const fisher_price = 2500; 
-    const musket_price = 10000;
-    // Auto upgrade Prices
-    const auto_chopper_price = 100; 
-    const auto_miner_price = 1000;
-    const auto_fisher_price = 10000;
-    const auto_hunter_price = 100000;
-    // Base Sell Prices
-    const log_price = 1;
-    const stone_price = 10;
-    const hide_price = 50
     let menu;
-
+    let logs = inventory.logs
 
 
     setInterval(function() {
@@ -48,6 +32,7 @@ $(document).ready(function(){
         hides += rates.auto_hide;
         changeInventory();
         changeMarket();
+
     }, 5000)
     $("#chop").click(function() {
         logs += rates.auto_log;
@@ -55,32 +40,45 @@ $(document).ready(function(){
         changeMarket();
     });
 
+
     $("#mine").click(function(){
         if(pick_lvl == 0) {
             alert("You have nothing to mine stone with.")
         }else{
-            stones += stonePlus * pickaxes;
+            stones += rates.stone * pickaxe_lvl;
         }});
+    $("#fish").click(function()) {
+        if(rod_lvl == 0) {
+            alert("You have nothing to catch fish with.")
+        }else {
+            fish += rates.fish * rifle_lvl
+        }
+    }
     $("#hunt").click(function() {
-        if(rifle_lvl)
+        if(rifle_lvl == 0) {
+            alert("You have npthing to hunt animals with.")
+        }else {
+            logs += rates.log * rifle_lvl;
+        }
+
     }) 
-    $("#sell1").click(function(){
+    $("#sell_1").click(function(){
         logs --;
-        money += logPrice;
+        money += prices.log;
         changeInventory();
         changeMarket();
     });
 
     $("#sell-10").click(function(){
         logs -= 10;
-        money += logPrice *10;
+        money += prices.log * 10;
         changeInventory();
         changeMarket();
     });
 
 
     $("#sell-all").click(function(){
-        money += logPrice * logs;
+        money += prices.log * logs;
         logs = 0;
         changeInventory();
         changeMarket();
@@ -94,12 +92,12 @@ $(document).ready(function(){
     });
     $("#sell-10-stone").click(function(){
         stones -= 10;
-        money += stone_price *10;
+        money += prices.stone * 10;
         changeInventory();
         changeMarket();
     });
     $("#sell-all-Stone").click(function(){
-        money += stone_price * stones;
+        money += prices.stone * stones;
         stones = 0;
         changeInventory();
         changeMarket();
@@ -118,13 +116,19 @@ $(document).ready(function(){
         if(money >= auto_miner_price) {
         money -= auto_miner_price;
         rates.auto_stone += 1;
-        auto_miner_price = auto_miner_price * 2;
+        prices.auto_miner += prices.auto_miner * 2;
         changeInventory();
         changeMarket();
         }
      $("#auto-fisher").click(function() {
-
-     })
+        if(money >= auto_fisher_price) {
+            money -= auto_fisher_price;
+            rates.auto_fisher += 1
+            prices.auto_fisher += prices.auto_fisher * 2;
+            changeInventory();
+            changeMarket();
+        }
+     }) 
      $("#auto-hunter").click(function() {
         if (money >= auto)
      })
@@ -154,7 +158,9 @@ $(document).ready(function(){
     $("#return").click(function() {
         menu = switchMenu("main");
     });
-
+    $("#unique").click(function() {
+        menu = switchMenu("unique_upgrades")
+    })
     
 
   });
