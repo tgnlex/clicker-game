@@ -6,15 +6,21 @@ import changeMarket from './lib/change_market,js';
 import switchMenu from './lib/switch_menu.js';
 function main () {
 $(document).ready(function(){
-  
+    // unique upgrade prices
+    const horse_price;
+    const wagon_price;
+    const train_price;
+
     // Click Upgrade Prices
     const axe_upgrade_price = 10;
-    const pickaxe_price = 50;  
-    const musket_upgrade_price = 5000
+    const pickaxe_price = 50; 
+    const fisher_price = 2500; 
+    const musket_price = 10000;
     // Auto upgrade Prices
     const auto_chopper_price = 100; 
-    const auto_miner_price = 3000;
-    const auto_hunter_price = 10000;
+    const auto_miner_price = 1000;
+    const auto_fisher_price = 10000;
+    const auto_hunter_price = 100000;
     // Base Sell Prices
     const log_price = 1;
     const stone_price = 10;
@@ -100,22 +106,28 @@ $(document).ready(function(){
     });
 
     $("#auto-chopper").click(function(){
-        if(money >= autoChopperPrice) {
-        money -= autoChopperPrice;
-        autoLogPlus += 1;
-        autoChopperPrice = autoChopperPrice * 2;
+        if(money >= auto_chopper_price) {
+        money -= auto_chopper_price;
+        rates.auto_log += 1;
+        auto_chopper_price = auto_chopper_price * 2;
         changeInventory();
         changeMarket();
         }
     });
     $("#auto-miner").click(function(){
-        if(money >= autoMinerPrice) {
-        money -= autoMinerPrice;
-        autoStonePlus += 1;
-        autoMinerPrice = autoMinerPrice * 2;
+        if(money >= auto_miner_price) {
+        money -= auto_miner_price;
+        rates.auto_stone += 1;
+        auto_miner_price = auto_miner_price * 2;
         changeInventory();
         changeMarket();
         }
+     $("#auto-fisher").click(function() {
+
+     })
+     $("#auto-hunter").click(function() {
+        if (money >= auto)
+     })
     });
     $("#pickaxe").click(function(){
         if (money >= pickaxe_price) {
