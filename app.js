@@ -12,7 +12,6 @@ $(document).ready(function(){
     let menu;
     let logs = inventory.logs
 
-
     setInterval(function() {
         logs += rates.auto_log;
         changeInventory();
@@ -90,24 +89,93 @@ $(document).ready(function(){
         changeInventory();
         changeMarket();
     });
-    $("#sell-10-stone").click(function(){
+    $("#sell-10-stones").click(function(){
         stones -= 10;
         money += prices.stone * 10;
         changeInventory();
         changeMarket();
     });
-    $("#sell-all-Stone").click(function(){
+    $("#sell-100-stone").click(function() {
+        stones -= 100;
+        money += prices.stone * 100;
+        changeInventory();
+        changeMarket();
+    })
+    $("#sell-1000-stones").click(function() {
+        stones += 1000;
+        money += prices.stone * 1000;
+        changeInventory();
+        changeMarket();
+    })
+    $("#sell-all-stones").click(function(){
         money += prices.stone * stones;
         stones = 0;
         changeInventory();
         changeMarket();
     });
+    $("#sell-fish").click(function() {
+        fish -= 1;
+        money += prices.fish;
+    })
+    $("#sell-10-fish").click(function(){
+        fish -= 10;
+        money += prices.fish * 10;
+        changeInventory();
+        changeMarket();
+    });
+    $("#sell-100-fish").click(function() {
+        fish -= 100;
+        money += fish.stone * 100;
+        changeInventory();
+        changeMarket();
+    })
+    $("#sell-1000-fish").click(function() {
+        fish -= 1000;
+        money += prices.fish * 1000;
+        changeInventory();
+        changeMarket();
+    })
+    $("#sell-all-fish").click(function(){
+        fish += prices.fish * fish;
+        fish = 0;
+        changeInventory();
+        changeMarket();
+    });
+    $("#sell-hide").click(function() {
+        hides -= 1;
+        hides += prices.hides;
+    })
+    $("#sell-10-hides").click(function(){
+        hides -= 10;
+        hides += prices.hides * 10;
+        changeInventory();
+        changeMarket();
+    });
+    $("#sell-100-hides").click(function() {
+        hides -= 100;
+        hides += fish.stone * 100;
+        changeInventory();
+        changeMarket();
+    })
+    $("#sell-1000-hides").click(function() {
+        hides -= 1000;
+        hides += prices.hides * 1000;
+        changeInventory();
+        changeMarket();
+    })
+    $("#sell-all-hides").click(function(){
+        fish += prices.fish * fish;
+        fish = 0;
+        changeInventory();
+        changeMarket();
+    });
+
 
     $("#auto-chopper").click(function(){
-        if(money >= auto_chopper_price) {
-        money -= auto_chopper_price;
+        if(money >= prices.auto_chopper) {
+        money -= prices.auto_chopper;
         rates.auto_log += 1;
-        auto_chopper_price = auto_chopper_price * 2;
+        prices.auto_chopper = prices.auto_chopper * 2;
         changeInventory();
         changeMarket();
         }
@@ -120,6 +188,7 @@ $(document).ready(function(){
         changeInventory();
         changeMarket();
         }
+      });
      $("#auto-fisher").click(function() {
         if(money >= auto_fisher_price) {
             money -= auto_fisher_price;
@@ -128,7 +197,16 @@ $(document).ready(function(){
             changeInventory();
             changeMarket();
         }
-     }) 
+      });
+        $("#auto-hunter").click(function() {
+        if(money >= price.auto_fisher) {
+            money -= price.auto_fisher;
+            rates.auto_hunter += 1
+            prices.auto_hunter += prices.auto_hunter * 2;
+            changeInventory();
+            changeMarket();
+        }
+     });
      $("#auto-hunter").click(function() {
         if (money >= auto)
      })
