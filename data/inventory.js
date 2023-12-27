@@ -17,15 +17,15 @@
       this.boat = null;
       this.train = null;
       // Click Gathering Rate Upgrades
-      this.axe_sharpener = null;
+      this.grindstone = null;
       this.dynamite = null;
-      this.fishing_lures = null;
-      this.hunting_traps = null;      
+      this.lures = null;
+      this.snare_traps = null;      
       //Auto gathering rate upgrades
       this.wheel_barrow = null;
       this.mine_cart = null;
       this.fishing_boat = null;
-      this.hunting_hound = null;
+      this.hounds = null;
       // Item price modifiers
       this.sawmill = null;
       this.forge = null;
