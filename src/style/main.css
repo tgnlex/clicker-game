@@ -1,0 +1,23 @@
+html, body {
+  width: 100%;
+  height: 100%
+}
+body {
+  padding-top: 20px;
+  font-family: Arial;
+  background-color: cyan;
+}
+
+.text {
+  font-size: 20px;
+  color: white;
+  display: block; 
+  margin: 5px;
+}
+
+#spacer {
+
+}
+#sidebar {
+  float: left;
+}

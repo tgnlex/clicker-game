@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <main id="game" class="screen">
+          <aside id="buildings" class="sidebar">
+            <menu>
+              <li id="t1-item" class="item building">
+                <button id="buy-building-t1" class="buy-btn">
+                  Buy Market stall
+                </button>
+              </li>
+              <li id="t2-item" class="item building">
+                <button id="buy-building-t2" class="buy-btn">Buy </button>
+              </li>
+            </menu>
+          </aside>
+          <div class="spacer"></div>
+          <div id="target" onclick="addClick()"> 
+            <img src="#" width="300px" height="300px" />
+          </div>
+          <p class="gold-label">Current Gold: </p>
+          <div id="gold"></div>
+          <div id="level"></div>
+  </main>
 	<script src="src/main.js"></script>
   </body>
 </html>
