@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main id="game" class="screen">
+      <aside id="buildings" class="sidebar">
+        <menu>
+          <li id="t1-item" class="item building">
+            <button id="buy-building-t1" class="buy-btn">
+                  Buy Market stall
+            <li id="t2-item" class="item building">
+            <button id="buy-building-t2" class="buy-btn">Buy </button>
+          </li>
+        </menu>
+       </aside>
+  <div id="name-wrapper"></div> 
+  <div id="target-wrapper" onclick="addClick()"> 
+    <svg id="click-target" class="svg-wrapper">
+      <circle cx="150" cy="75" r="75" />
+    </svg>
+  </div>
+   <p class="gold-label">Current Gold: </p>
+    <div id="gold"></div>
+    <div id="level"></div>
+  </main>
+	<script type="module" src="src/main.js"></script>
+  </body>
+</html>
+<style>
+ #click-target {
+   background: #ffece3;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%)
+ }
+</style>
+
