@@ -1,9 +1,6 @@
-import server from './server/index.js';
+import init from './lib/init.js';
+window.onload = init()
 
-const main = async () => {
-  console.info('Starting main loop...')
-  server()
+function main() {
+
 }
-
-main()
-
