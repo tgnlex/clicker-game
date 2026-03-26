@@ -1,0 +1,22 @@
+:root {
+	font-family: var(--font-stack);
+	line-height: 1.5;
+	font-weight: 400;
+
+	color: #222;
+	background-color: #ffffff;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+
+#app {
+	max-width: var(--app--max-w);
+	margin: var(--app--m);
+	text-align: center;
+}
+

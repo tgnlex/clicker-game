@@ -1,0 +1,21 @@
+
+
+#clicker {
+  --color: rgb(102, 51, 153);
+  --color--hover: rgb(130, 72, 170);
+  --color--active: rgb(80, 32, 109);
+  background-color: var(--color);
+  border: 2px solid transparent;
+  border-radius: 100%;
+
+  height: 12em;
+  width: 12em;
+}
+
+#clicker:hover {
+  background-color: var(--color--hover);
+}
+
+#clicker:active {
+  background-color: var(--color--active);
+}

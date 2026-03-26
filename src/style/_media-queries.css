@@ -1,0 +1,22 @@
+
+@media (max-width: 639px) {
+  #app {
+    --mobile--app--margin: 2rem;
+    margin: var(--mobile--app--margin);
+  }
+  section {
+    --mobile--section--mt: 5rem;
+    --mobile--section--cols: 1fr;
+    --mobile--section--row-gap: 1rem;
+    margin-top: var(--mobile--section--mt);
+    grid-template-columns: var(--mobile--section--cols);
+    row-gap: var(--mobile--section--row-gap);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #ccc;
+    background-color: #1a1a1a;
+  }
+}

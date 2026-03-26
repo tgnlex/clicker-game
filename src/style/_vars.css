@@ -1,0 +1,7 @@
+:root {
+  --font-pop: Poppins;
+  --font-stack: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --app--max-w: 1280px;
+  --app--m: 0 auto;
+}
+
